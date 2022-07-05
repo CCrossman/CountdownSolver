@@ -6,13 +6,19 @@ import java.util.stream.Collectors;
 public class CountdownMathSolver {
     private List<Integer> numbers;
     private Integer target;
+    private Integer scoringRange;
 
     public static void main(String[] args) {
         CountdownMathSolver solver = new CountdownMathSolver();
-        solver.setNumbers(10, 6, 3, 2, 5, 3);
-        solver.setTarget(761);
+        solver.setNumbers(25, 50, 10, 6, 3, 7);
+        solver.setTarget(984);
+        solver.setScoringRange(0);
         Set<Solution> solutions = solver.solve();
         solutions.stream().sorted(Comparator.comparingInt(s -> Math.abs(s.getResult() - s.getTarget()))).forEach(System.out::println);
+    }
+
+    public void setScoringRange(int scoringRange) {
+        this.scoringRange = scoringRange;
     }
 
     public Set<Solution> solve() {
@@ -50,7 +56,7 @@ public class CountdownMathSolver {
                         ElementTree tree = new ElementTree();
                         tree.setRoot(node);
 
-                        if (Math.abs(target - result.get()) < 10) {
+                        if (Math.abs(target - result.get()) <= scoringRange) {
                             solutions.add(new Solution(tree, result.get(), target));
                         }
 

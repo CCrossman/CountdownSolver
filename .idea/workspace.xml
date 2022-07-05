@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d837ba77-7bca-4636-8f29-b92bf678314d" name="Changes" comment="Removed WholeNumber class.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="d837ba77-7bca-4636-8f29-b92bf678314d" name="Changes" comment="Deleted a comment.">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/crossman/CountdownMathSolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/crossman/CountdownMathSolver.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -102,7 +101,21 @@
       <option name="project" value="LOCAL" />
       <updated>1656990500495</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Fixed a bug.">
+      <created>1657060270656</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1657060270656</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Deleted a comment.">
+      <created>1657060332112</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1657060332112</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -120,6 +133,8 @@
     <MESSAGE value="Solves very well." />
     <MESSAGE value="Solve better by building trees." />
     <MESSAGE value="Removed WholeNumber class." />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed WholeNumber class." />
+    <MESSAGE value="Fixed a bug." />
+    <MESSAGE value="Deleted a comment." />
+    <option name="LAST_COMMIT_MESSAGE" value="Deleted a comment." />
   </component>
 </project>
