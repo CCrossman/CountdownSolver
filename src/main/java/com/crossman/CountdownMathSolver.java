@@ -20,8 +20,8 @@ public class CountdownMathSolver {
          *               / \    / \
          *            100   4  9   1
          */
-        solver.setNumbers(100, 1, 9, 1, 2, 4);
-        solver.setTarget(785);
+        solver.setNumbers(10, 6, 3, 2, 5, 3);
+        solver.setTarget(761);
         Set<Solution> solutions = solver.solve();
         solutions.stream().sorted(Comparator.comparingInt(s -> Math.abs(s.getResult() - s.getTarget()))).forEach(System.out::println);
     }
@@ -40,7 +40,10 @@ public class CountdownMathSolver {
 
     private void _solve(Set<Solution> solutions, List<ElementTree> numbers) {
         for (int i = 0; i < numbers.size(); ++i) {
-            for (int j = i + 1; j < numbers.size(); ++j) {
+            for (int j = 0; j < numbers.size(); ++j) {
+                if (i == j) {
+                    continue;
+                }
                 ElementTree left = numbers.get(i);
                 ElementTree right = numbers.get(j);
 
