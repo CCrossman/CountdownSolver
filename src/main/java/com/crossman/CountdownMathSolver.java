@@ -4,13 +4,24 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class CountdownMathSolver {
-    private List<WholeNumber> numbers;
+    private List<Integer> numbers;
     private Integer target;
 
     public static void main(String[] args) {
         CountdownMathSolver solver = new CountdownMathSolver();
-        solver.setNumbers(2, 5, 50, 3);
-        solver.setTarget(102);
+        /*
+         *                              +
+         *                           /     \
+         *                         x        1
+         *                     /       \
+         *                    -         2
+         *                 /     \
+         *                x      -
+         *               / \    / \
+         *            100   4  9   1
+         */
+        solver.setNumbers(100, 1, 9, 1, 2, 4);
+        solver.setTarget(785);
         Set<Solution> solutions = solver.solve();
         solutions.stream().sorted(Comparator.comparingInt(s -> Math.abs(s.getResult() - s.getTarget()))).forEach(System.out::println);
     }
@@ -67,6 +78,6 @@ public class CountdownMathSolver {
     }
 
     public void setNumbers(Integer... numbers) {
-        this.numbers = Arrays.stream(numbers).map(WholeNumber::new).collect(Collectors.toList());
+        this.numbers = Arrays.stream(numbers).collect(Collectors.toList());
     }
 }

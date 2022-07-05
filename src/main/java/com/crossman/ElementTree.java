@@ -16,7 +16,7 @@ public class ElementTree extends Tree<Element> {
             return Optional.empty();
         }
         if (curr.getValue().isNumber()) {
-            return Optional.of(curr.getValue().getNumber().getValue());
+            return Optional.of(curr.getValue().getNumber());
         }
         Operator operator = curr.getValue().getOperator();
         return operator.applyOptional(_getNumericValue(curr.getLeft()), _getNumericValue(curr.getRight()));

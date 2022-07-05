@@ -56,7 +56,7 @@ public class Solution {
             return null;
         }
         if (curr.getValue().isNumber()) {
-            return curr.getValue().getNumber().getValue() + "";
+            return curr.getValue().getNumber() + "";
         }
         return "(" + _prettyPrint(curr.getLeft()) + " " + curr.getValue().getOperator().name() + " " + _prettyPrint(curr.getRight()) + ")";
     }

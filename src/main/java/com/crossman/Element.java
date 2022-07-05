@@ -3,15 +3,15 @@ package com.crossman;
 import java.util.Objects;
 
 public class Element {
-    private final WholeNumber number;
+    private final Integer number;
     private final Operator operator;
 
-    private Element(WholeNumber number, Operator operator) {
+    private Element(Integer number, Operator operator) {
         this.number = number;
         this.operator = operator;
     }
 
-    public WholeNumber getNumber() {
+    public Integer getNumber() {
         return number;
     }
 
@@ -48,7 +48,7 @@ public class Element {
                 '}';
     }
 
-    public static Element ofNumber(WholeNumber number) {
+    public static Element ofNumber(Integer number) {
         return new Element(number, null);
     }
 

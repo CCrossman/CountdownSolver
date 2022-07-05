@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d837ba77-7bca-4636-8f29-b92bf678314d" name="Changes" comment="Solves very well.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/crossman/Element.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/crossman/ElementTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/crossman/Operator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/crossman/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/crossman/Tree.java" afterDir="false" />
+    <list default="true" id="d837ba77-7bca-4636-8f29-b92bf678314d" name="Changes" comment="Removed WholeNumber class.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/crossman/CountdownMathSolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/crossman/CountdownMathSolver.java" afterDir="false" />
     </list>
@@ -86,7 +81,28 @@
       <option name="project" value="LOCAL" />
       <updated>1656984574946</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Solve better by building trees.">
+      <created>1656990026138</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1656990026138</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Solve better by building trees.">
+      <created>1656990131998</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1656990131998</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Removed WholeNumber class.">
+      <created>1656990500495</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1656990500495</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -102,6 +118,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Solves very well." />
-    <option name="LAST_COMMIT_MESSAGE" value="Solves very well." />
+    <MESSAGE value="Solve better by building trees." />
+    <MESSAGE value="Removed WholeNumber class." />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed WholeNumber class." />
   </component>
 </project>
