@@ -4,16 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d837ba77-7bca-4636-8f29-b92bf678314d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/crossman/CountdownMathSolver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/crossman/WholeNumber.java" afterDir="false" />
+    <list default="true" id="d837ba77-7bca-4636-8f29-b92bf678314d" name="Changes" comment="Solves very well.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/crossman/Element.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/crossman/ElementTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/crossman/Operator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/crossman/Solution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/crossman/Tree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/crossman/CountdownMathSolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/crossman/CountdownMathSolver.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +24,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -80,6 +79,14 @@
       <option name="presentableId" value="Default" />
       <updated>1656978272620</updated>
     </task>
+    <task id="LOCAL-00001" summary="Solves very well.">
+      <created>1656984574946</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1656984574946</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -92,5 +99,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Solves very well." />
+    <option name="LAST_COMMIT_MESSAGE" value="Solves very well." />
   </component>
 </project>

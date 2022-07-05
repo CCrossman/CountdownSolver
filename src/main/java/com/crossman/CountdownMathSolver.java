@@ -1,55 +1,65 @@
 package com.crossman;
 
-import org.paukov.combinatorics3.Generator;
-
 import java.util.*;
-import java.util.function.BiFunction;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 public class CountdownMathSolver {
     private List<WholeNumber> numbers;
     private Integer target;
-    private final Map<String, BiFunction<Integer,Integer, Optional<Integer>>> operators = Map.of(
-        "+", (a, b) -> Optional.of(a + b),
-        "-", (a, b) -> a > b ? Optional.of(a - b) : Optional.empty(),
-        "x", (a, b) -> Optional.of(a * b),
-        "/", (a, b) -> a % b == 0 ? Optional.of(a / b) : Optional.empty()
-    );
 
     public static void main(String[] args) {
         CountdownMathSolver solver = new CountdownMathSolver();
-        solver.setNumbers(50, 10, 8, 6, 4, 3);
-        solver.setTarget(150);
-        solver.solve();
+        solver.setNumbers(2, 5, 50, 3);
+        solver.setTarget(102);
+        Set<Solution> solutions = solver.solve();
+        solutions.stream().sorted(Comparator.comparingInt(s -> Math.abs(s.getResult() - s.getTarget()))).forEach(System.out::println);
     }
 
-    public void solve() {
-        Map<String,Integer> results = IntStream.range(2, numbers.size()).boxed().flatMap(len -> Generator.combination(numbers).simple(len).stream().flatMap(nums -> Generator.permutation(nums).simple().stream().distinct())).map(nums -> {
-            return Generator.combination(operators.keySet()).multi(nums.size() - 1).stream().map(ops -> {
-                Optional<Integer> result = Optional.of(nums.get(0).getValue());
-                for (int i = 1; i < nums.size(); ++i) {
-                    final int j = i;
-                    final String key = ops.get(i - 1);
-                    result = result.flatMap(n -> operators.get(key).apply(n, nums.get(j).getValue()));
-                }
-                if (result.isPresent() && Math.abs(target - result.get()) < 10) {
-                    return Map.of(
-                        "result: " + result.get() + ", nums: " + nums + ", ops: " + ops, Math.abs(target - result.get())
-                    );
-                }
-                return Map.<String,Integer>of();
-            }).reduce(new HashMap<>(), (a, b) -> {
-                a.putAll(b);
-                return a;
-            });
-        }).reduce(new HashMap<>(), (a, b) -> {
-            a.putAll(b);
-            return a;
-        });
+    public Set<Solution> solve() {
+        Set<Solution> solutions = new HashSet<>();
+        _solve(solutions,numbers.stream().map(wn -> toElementTree(Element.ofNumber(wn))).collect(Collectors.toCollection(ArrayList::new)));
+        return solutions;
+    }
 
-        var scoreComparator = Map.Entry.<String,Integer>comparingByValue();
-        results.entrySet().stream().sorted(scoreComparator).forEach(System.out::println);
+    private static ElementTree toElementTree(Element el) {
+        ElementTree elementTree = new ElementTree();
+        elementTree.setRoot(new Tree.Node<>(el));
+        return elementTree;
+    }
+
+    private void _solve(Set<Solution> solutions, List<ElementTree> numbers) {
+        for (int i = 0; i < numbers.size(); ++i) {
+            for (int j = i + 1; j < numbers.size(); ++j) {
+                ElementTree left = numbers.get(i);
+                ElementTree right = numbers.get(j);
+
+                List<ElementTree> newNumbers = new ArrayList<>(numbers);
+                newNumbers.remove(left);
+                newNumbers.remove(right);
+
+                for (Operator operator : Operator.values()) {
+                    Optional<Integer> result = operator.applyOptional(left.getNumericValue(), right.getNumericValue());
+                    if (result.isPresent()) {
+                        Tree.Node<Element> node = new Tree.Node<>(Element.ofOperator(operator));
+                        node.setLeft(left.getRoot());
+                        node.setRight(right.getRoot());
+
+                        ElementTree tree = new ElementTree();
+                        tree.setRoot(node);
+
+                        if (Math.abs(target - result.get()) < 10) {
+                            solutions.add(new Solution(tree, result.get(), target));
+                        }
+
+                        newNumbers.add(tree);
+
+                        _solve(solutions, newNumbers);
+
+                        newNumbers.remove(tree);
+                    }
+                }
+            }
+        }
     }
 
     public void setTarget(Integer target) {
