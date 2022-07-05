@@ -9,17 +9,6 @@ public class CountdownMathSolver {
 
     public static void main(String[] args) {
         CountdownMathSolver solver = new CountdownMathSolver();
-        /*
-         *                              +
-         *                           /     \
-         *                         x        1
-         *                     /       \
-         *                    -         2
-         *                 /     \
-         *                x      -
-         *               / \    / \
-         *            100   4  9   1
-         */
         solver.setNumbers(10, 6, 3, 2, 5, 3);
         solver.setTarget(761);
         Set<Solution> solutions = solver.solve();
